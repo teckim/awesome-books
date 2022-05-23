@@ -8,3 +8,7 @@ let bookCollection = [
         author: "Shel Arensen"
     },
 ]
+
+function addBook(book) {
+    bookCollection.push(book);
+}
