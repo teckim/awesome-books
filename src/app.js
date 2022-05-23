@@ -12,3 +12,7 @@ let bookCollection = [
 function addBook(book) {
     bookCollection.push(book);
 }
+
+function removeBook(index) {
+   bookCollection.splice(index, 1);
+}
