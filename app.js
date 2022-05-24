@@ -21,6 +21,7 @@ function remove(e) {
   if (e.target.classList.contains('btn')) {
     const bookItem = e.target.parentElement;
     bookItem.style.display = 'none';
+    console.log(bookItem);
 
     const books = JSON.parse(localStorage.getItem(bookUniqueId));
     const reducedBooks = books.filter((book) => book.id !== parseInt(bookItem.id));
@@ -31,7 +32,7 @@ function remove(e) {
 function add(event) {
   event.preventDefault();
 
-  let idCounter = parseInt(localStorage.getItem('idCounter'));
+  let idCounter = parseInt(localStorage.getItem('idCounter')) || 0;
   const newBook = {
     id: ++idCounter,
     title: this.elements.title.value,
@@ -50,3 +51,13 @@ function add(event) {
 
 document.forms[0].addEventListener('submit', add);
 document.body.addEventListener('click', remove);
+
+window.onload = () => {
+  const books = JSON.parse(localStorage.getItem(bookUniqueId));
+
+  if (books && books.length) {
+    books.forEach((book) => {
+      booksList.appendChild(renderBook(book));
+    });
+  }
+};
