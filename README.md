@@ -38,6 +38,12 @@ open `src/index.html`.
 - GitHub: [@teckim](https://github.com/teckim)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/baheddi-hakim/)
 
+👤 **Bruk Teshome**
+
+- GitHub: [@githubhandle](https://github.com/bruk19)
+- Twitter: [@twitterhandle](https://twitter.com/Bruktesh)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/bruk-teshome-ab4325226)
+
 
 ## 🤝 Contributing
 
