@@ -1,13 +1,3 @@
-const bookCollection = [
-  {
-    title: 'The Sulivan',
-    author: 'Mario Puzo',
-  },
-  {
-    title: 'The Poison Arrow Tree',
-    author: 'Shel Arensen',
-  },
-];
 /* eslint-disable no-plusplus */
 /* eslint-disable radix */
 
