@@ -30,5 +30,7 @@ form {
   width: 100%;
 }
   
-
+input[type='submit'] {
+  max-width: fit-content;
+}
   
