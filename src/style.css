@@ -1,0 +1,34 @@
+/* Here you apply all kinds of styling to your app UIs */
+html {
+  scroll-behavior: smooth;
+}
+  
+body {
+  margin: 0;
+  padding: 15px;
+}
+  
+.books-list {
+  max-width: 300px;
+}
+  
+.bookItem {
+  padding-bottom: 10px;
+  border-bottom: 1px solid grey;
+}
+  
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 15px;
+  max-width: 300px;
+}
+  
+.field {
+  box-sizing: border-box;
+  width: 100%;
+}
+  
+
+  
