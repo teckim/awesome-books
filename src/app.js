@@ -21,7 +21,6 @@ function remove(e) {
   if (e.target.classList.contains('btn')) {
     const bookItem = e.target.parentElement;
     bookItem.style.display = 'none';
-    console.log(bookItem);
 
     const books = JSON.parse(localStorage.getItem(bookUniqueId));
     const reducedBooks = books.filter((book) => book.id !== parseInt(bookItem.id));
