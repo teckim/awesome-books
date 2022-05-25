@@ -3,7 +3,6 @@
 
 let myLibrary = [];
 let storage = [];
-let count = 0;
 
 const booksTable = document.querySelector('.books-list');
 const title = document.querySelector('.title');
@@ -13,7 +12,6 @@ const addBtn = document.querySelector('.add');
 storage = JSON.parse(localStorage.getItem('books')) || [];
 
 function addBook(book, title, author) {
-  count += 1;
   book.title = title;
   book.author = author;
 
@@ -38,10 +36,6 @@ function addBook(book, title, author) {
   l.alignItems = 'center';
   l.width = '100%';
 
-  if (count % 2 !== 0) {
-    l.background = 'rgba(94, 87, 87, 0.671)';
-  }
-
   deleteButton.style.margin = '0 5px';
   deleteButton.style.flex = '1';
   bookText.style.flex = '7';
@@ -53,3 +47,33 @@ function addBook(book, title, author) {
     book.remove();
   });
 }
+
+class Books {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
+
+  add() {
+    myLibrary.push(this);
+    addBook(this, title.value, author.value);
+    localStorage.setItem('books', JSON.stringify(myLibrary));
+  }
+
+  remove() {
+    myLibrary = myLibrary.filter((element) => element !== this);
+    localStorage.setItem('books', JSON.stringify(myLibrary));
+  }
+}
+for (let i = 0; i < storage.length; i += 1) {
+  const book = new Books();
+  book.title = storage[i].title;
+  book.author = storage[i].author;
+  myLibrary.push(book);
+  addBook(myLibrary[i], myLibrary[i].title, myLibrary[i].author);
+}
+addBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  const book = new Books();
+  book.add();
+});
