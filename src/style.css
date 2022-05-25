@@ -3,33 +3,59 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  margin: 0;
-  padding: 15px;
+header {
+  text-align: center;
 }
 
 .books-list {
-  max-width: 300px;
+  border: 1px solid black;
+  width: 90%;
+  margin-left: 5%;
 }
 
-.bookItem {
-  padding-bottom: 10px;
-  border-bottom: 1px solid grey;
+.bookLabel:nth-child(2n + 1) {
+  background-color: rgba(94, 87, 87, 0.671);
 }
 
-form {
+.newBook {
+  width: 90%;
+  margin-left: 5%;
+  padding: 15px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding-top: 15px;
-  max-width: 300px;
+  align-items: center;
 }
 
-.field {
-  box-sizing: border-box;
+.books-creator {
+  width: 25%;
+  padding: 5px;
+}
+
+.line {
+  margin-top: 30px;
+  width: 200px;
+  border-top: 1px solid black;
+}
+
+form h2 {
   width: 100%;
+  text-align: center;
 }
 
-input[type='submit'] {
-  max-width: fit-content;
+input {
+  width: 100%;
+  margin: 5px 0;
+  height: 30px;
+  box-sizing: border-box;
+}
+
+.btn {
+  width: 120px;
+  margin-left: 100%;
+  transform: translateX(-100%);
+  padding: 5px 20px;
+  box-sizing: border-box;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
 }
