@@ -38,7 +38,6 @@ function addBook(book, title, author) {
   l.alignItems = 'center';
   l.width = '100%';
 
-
   if (count % 2 !== 0) {
     l.background = 'rgba(94, 87, 87, 0.671)';
   }
