@@ -2,34 +2,21 @@
 html {
   scroll-behavior: smooth;
 }
-
-body {
-  margin: 0;
-  padding: 15px;
+header {
+  text-align: center;
 }
 
 .books-list {
-  max-width: 300px;
+  border: 1px solid black;
+  width: 90%;
+  margin-left: 5%;
 }
 
-.bookItem {
-  padding-bottom: 10px;
-  border-bottom: 1px solid grey;
-}
-
-form {
+.newBook {
+  width: 90%;
+  margin-left: 5%;
+  padding: 15px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding-top: 15px;
-  max-width: 300px;
-}
-
-.field {
-  box-sizing: border-box;
-  width: 100%;
-}
-
-input[type='submit'] {
-  max-width: fit-content;
+  align-items: center;
 }
