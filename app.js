@@ -1,8 +1,16 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable radix */
 
-const booksList = document.querySelector('.books-list');
-const bookUniqueId = 'bookStorage';
+let myLibrary = [];
+let storage = [];
+let count = 0;
+
+const booksTable = document.querySelector('.books-list');
+const title = document.querySelector('.title');
+const author = document.querySelector('.author');
+const addBtn = document.querySelector('.add');
+
+storage = JSON.parse(localStorage.getItem('books')) || [];
 
 function renderBook(book) {
   const bookItem = document.createElement('div');
