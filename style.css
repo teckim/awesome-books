@@ -59,3 +59,50 @@ input {
   display: flex;
   align-items: center;
 }
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  border: 1px solid gray;
+  height: 40px;
+}
+
+.head ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.head a {
+  text-decoration: none;
+  border-right: 1px solid black;
+  padding-right: 20px;
+  font-size: 20px;
+  color: black;
+}
+
+.head h2 {
+  padding-left: 40px;
+}
+
+.time {
+  position: relative;
+  left: 38vw;
+  bottom: 10px;
+}
+
+.foot {
+  position: absolute;
+  bottom: 30px;
+  left: 50px;
+  border: 1px solid black;
+  width: 90%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
+  font-size: 23px;
+}
