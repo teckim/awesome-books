@@ -12,59 +12,45 @@ const addBtn = document.querySelector('.add');
 
 storage = JSON.parse(localStorage.getItem('books')) || [];
 
-function renderBook(book) {
-  const bookItem = document.createElement('div');
-  bookItem.id = book.id;
-  bookItem.className = 'bookItem';
-  bookItem.innerHTML = `
-    <h2>${book.title}</h2>
-    <p>${book.author}</p>
-    <button class="btn" type="button" name="button" value="remove">Remove</button>
-  `;
+function addBook(book, title, author) {
+  count += 1;
+  book.title = title;
+  book.author = author;
 
-  return bookItem;
-}
+  const bookLabel = document.createElement('article');
+  const bookText = document.createElement('h4');
+  const deleteButton = document.createElement('button');
 
-function remove(e) {
-  if (e.target.classList.contains('btn')) {
-    const bookItem = e.target.parentElement;
-    bookItem.style.display = 'none';
+  bookLabel.classList.add('bookLabel');
+  bookText.classList.add('bookText');
+  deleteButton.classList.add('btn');
+  deleteButton.classList.add('delete');
 
-    const books = JSON.parse(localStorage.getItem(bookUniqueId));
-    const reducedBooks = books.filter((book) => book.id !== parseInt(bookItem.id));
-    localStorage.setItem(bookUniqueId, JSON.stringify(reducedBooks));
+  booksTable.appendChild(bookLabel);
+  bookLabel.appendChild(bookText);
+  bookLabel.appendChild(deleteButton);
+
+  bookText.textContent = `"${title}" by ${author}`;
+  deleteButton.textContent = 'Delete';
+
+  const l = bookLabel.style;
+  l.display = 'flex';
+  l.alignItems = 'center';
+  l.width = '100%';
+
+
+  if (count % 2 !== 0) {
+    l.background = 'rgba(94, 87, 87, 0.671)';
   }
+
+  deleteButton.style.margin = '0 5px';
+  deleteButton.style.flex = '1';
+  bookText.style.flex = '7';
+  deleteButton.style.transform = 'translateX(0)';
+  deleteButton.style.height = '45px';
+
+  deleteButton.addEventListener('click', (event) => {
+    event.target.parentNode.remove();
+    book.remove();
+  });
 }
-
-function add(event) {
-  event.preventDefault();
-
-  let idCounter = parseInt(localStorage.getItem('idCounter')) || 0;
-  const newBook = {
-    id: ++idCounter,
-    title: this.elements.title.value,
-    author: this.elements.author.value,
-  };
-  booksList.appendChild(renderBook(newBook));
-
-  let books = localStorage.getItem(bookUniqueId);
-  if (books === null) books = [];
-  else books = JSON.parse(books);
-
-  books.push(newBook);
-  localStorage.setItem(bookUniqueId, JSON.stringify(books));
-  localStorage.setItem('idCounter', idCounter);
-}
-
-document.forms[0].addEventListener('submit', add);
-document.body.addEventListener('click', remove);
-
-window.onload = () => {
-  const books = JSON.parse(localStorage.getItem(bookUniqueId));
-
-  if (books && books.length) {
-    books.forEach((book) => {
-      booksList.appendChild(renderBook(book));
-    });
-  }
-};
