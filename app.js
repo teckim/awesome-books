@@ -34,7 +34,6 @@ function addBook(book, title, author) {
   const l = bookLabel.style;
   l.display = 'flex';
   l.alignItems = 'center';
-  l.width = '100%';
 
   deleteButton.style.margin = '0 5px';
   deleteButton.style.flex = '1';
